@@ -18,8 +18,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
 }));
-
-export default function Congress() {
+export default function Congress(props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -29,6 +28,11 @@ export default function Congress() {
             Congress 
           </Typography>
           <IconButton
+                onClick = { () => {
+                    props.updateCount((prevValue) => {
+                      return(prevValue+1);
+                    });
+                } }
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"

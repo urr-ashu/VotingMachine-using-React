@@ -4,12 +4,11 @@ import "../App.css";
 
 function Navbar() {
     return (
-        <AppBar position="static">
+    <AppBar position="static">
     <Typography  align = "center" variant="h3">
-
         WELCOME VOTERS
     </Typography>
-        </AppBar>
+    </AppBar>
     );
 }
 

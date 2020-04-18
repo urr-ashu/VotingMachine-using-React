@@ -15,7 +15,20 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Result() {
+export default function Result(props) {
+
+  function calculator(){
+    console.log("Congress= "+props.cCount);
+    console.log("BJP= "+props.bCount);
+    console.log("AAP= "+props.aCount);
+  }
+
   const classes = useStyles();
-  return <div className = "center" ><Button className={classes.root}>SEE RESULTS</Button></div>;
+  return (
+  <div className = "center" >
+    <Button 
+    onClick = {calculator}
+    className={classes.root}>SEE RESULTS</Button>
+    </div>
+  );
 }

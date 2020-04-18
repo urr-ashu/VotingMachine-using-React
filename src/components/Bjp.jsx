@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Bjp() {
+export default function Bjp(props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -29,6 +29,11 @@ export default function Bjp() {
             BJP 
           </Typography>
           <IconButton
+                 onClick = { () => {
+                  props.updateCount((prevValue) => {
+                    return(prevValue+1);
+                  });
+              } }
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
