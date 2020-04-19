@@ -1,30 +1,17 @@
-import React, {useState} from 'react';
-import Navbar from "./components/Navbar";
-import Bjp from "./components/Bjp";
-import Aap from "./components/Aap";
-import Congress from "./components/Congress";
-import Result from './components/Result';
-
+import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import ResultPage from './components/ResultPage';
+import MyHome from "./components/MyHome";
 
 function App() {
-  const [congressCount, updateCongressCount] = useState(0);
-  const [aapCount, updateAppCount] = useState(0);
-  const [bjpCount, updateBjpCount] = useState(0);
-
-
+ 
   return (
     <div>
-      <Navbar/>
-      <Bjp updateCount = {updateBjpCount}/>
-      <Aap updateCount = {updateAppCount}/>
-      <Congress updateCount = {updateCongressCount}/>
-      <Result 
-      bCount = {bjpCount}
-      cCount = {congressCount}
-      aCount = {aapCount}
-      />
-
-    </div>
+    <BrowserRouter>
+      <Route path ="/home" component = { MyHome } />
+      <Route path = "/result" component = {ResultPage}/>
+      </BrowserRouter>
+      </div>
   );
 }
 

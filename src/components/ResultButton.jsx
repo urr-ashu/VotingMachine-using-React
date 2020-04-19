@@ -2,6 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import "../App.css";
+import { Link } from "react-router-dom";
+import ResultPage from "./ResultPage";
 
 const useStyles = makeStyles({
   root: {
@@ -15,20 +17,21 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Result(props) {
+export default function ResultButton(props) {
 
-  function calculator(){
-    console.log("Congress= "+props.cCount);
-    console.log("BJP= "+props.bCount);
-    console.log("AAP= "+props.aCount);
+
+  function dataSender(){
+    console.log(props.bCount);
+    console.log(props.cCount);
+    console.log(props.aCount);
   }
 
   const classes = useStyles();
   return (
   <div className = "center" >
-    <Button 
-    onClick = {calculator}
-    className={classes.root}>SEE RESULTS</Button>
-    </div>
+    <Link style={{textDecoration : "none"}} to = "/result">
+      <Button onClick = {dataSender} className={classes.root}>SEE RESULTS</Button>
+    </Link>
+  </div>
   );
 }
