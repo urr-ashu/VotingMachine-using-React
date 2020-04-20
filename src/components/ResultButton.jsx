@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import "../App.css";
 import { Link } from "react-router-dom";
-import ResultPage from "./ResultPage";
+
 
 const useStyles = makeStyles({
   root: {
@@ -19,11 +19,8 @@ const useStyles = makeStyles({
 
 export default function ResultButton(props) {
 
-
   function dataSender(){
-    console.log(props.bCount);
-    console.log(props.cCount);
-    console.log(props.aCount);
+    props.fnSetter(props.bCount, props.cCount, props.aCount);
   }
 
   const classes = useStyles();
